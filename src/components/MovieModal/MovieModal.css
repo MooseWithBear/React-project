@@ -1,3 +1,8 @@
+.button{
+    position: absolute;
+    top: 0;
+}
+
 .wrapper-modal {
     position: fixed;
     inset: 0px;
@@ -80,7 +85,7 @@
 @media screen and (max-height: 768px) {
     .wrapper-modal {
         align-items: unset;
-        padding-top: 2rem;
+        padding: 3%;
     }
 
     .modal {
@@ -89,6 +94,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .modal__title {
+        font-size: 1.4rem;
+    }
     .modal__overview {
         font-size: 16px;
     }
@@ -98,7 +106,7 @@
     }
 
     .wrapper-modal {
-        padding: 0;
+        padding: 3%;
     }
 
     .modal {

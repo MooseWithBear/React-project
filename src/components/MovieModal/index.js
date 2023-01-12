@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
-import "./MovieModal.css";
 import useOnClickOutside from '../../hooks/useOnClickOutside';
+import "./MovieModal.css";
+import styled from 'styled-components';
 
 const MovieModal = ({
   backdrop_path,
@@ -14,7 +15,6 @@ const MovieModal = ({
 }) => {
 
   const ref = useRef();
-  // console.log('ref: ', ref);
 
   useOnClickOutside(ref, () => { 
     setModalOpen(false);
@@ -24,12 +24,12 @@ const MovieModal = ({
     <div className='presentation' role="presentation">
       <div className='wrapper-modal'>
         <div className='modal' ref={ref}>
-          <span
+          <Close
             onClick={() => setModalOpen(false)}
             className="modal-close"
           >
             X
-          </span>
+          </Close>
 
           <img
             className='modal__poster-img'
@@ -54,3 +54,13 @@ const MovieModal = ({
 }
 
 export default MovieModal
+
+
+const Close = styled.span`
+      position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+`;
